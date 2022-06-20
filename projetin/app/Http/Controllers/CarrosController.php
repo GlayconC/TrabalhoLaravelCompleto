@@ -4,53 +4,53 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\ModelProdutos;
+use App\Models\ModelCarros;
 use Log;
 
-class ProdutosController extends Controller
+class CarrosController extends Controller
 {
-    private $objProdutos;
+    private $objCarros;
 
     public function __construct(){
-        $this->objProdutos = new ModelProdutos;
+        $this->objCarros = new ModelCarros;
     }
     
     public function index(){
-        $produtos = $this->objProdutos->all();
-        return view('produtos.index',compact('produtos'));
+        $carros = $this->objCarros->all();
+        return view('carros.index',compact('carros'));
     }
     
     public function create(){   
-        return view('produtos.create');
+        return view('carros.create');
     }
     
     public function edit($id){
-        $produtos = $this->objProdutos->find($id);
-        return view('produtos.create',compact('produtos'));
+        $carros = $this->objCarros->find($id);
+        return view('carros.create',compact('carros'));
     }
 
     public function store(Request $request){
-        $cad = $this->objProdutos->create([
+        $cad = $this->objCarros->create([
             'id' => $request->id,
             'nome' => $request->nome,
             'preco' => $request->preco
         ]);
         if($cad){
-            return redirect('produtos');
+            return redirect('carros');
         }
     }
 
     public function update(Request $request, $id){
-        $this->objProdutos->where(['id'=>$id])->update([
+        $this->objCarros->where(['id'=>$id])->update([
             'id' => $request->id,
             'nome' => $request->nome,
             'preco' => $request->preco
         ]);
-        return redirect('produtos');
+        return redirect('carros');
     }
 
     public function destroy($id){
-        $del = $this->objProdutos->destroy($id);
-        return redirect('produtos');
+        $del = $this->objCarros->destroy($id);
+        return redirect('carros');
     }
 }

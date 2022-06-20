@@ -16,7 +16,7 @@
             <th scope="col">Id</th>
             <th scope="col">Nome</th>
             <th scope="col">Nascimento</th>
-            <th scope="col">Produto</th>
+            <th scope="col">Carro</th>
             <th scope="col">Cidade</th>
             <th scope="col">Ações</th>
         </tr>
@@ -24,14 +24,14 @@
         <tbody>
         @foreach($pessoas as $pes)
             @php
-                $produto = $pes->find($pes->id)->relProdutos;
+                $carro = $pes->find($pes->id)->relCarros;
                 $cidade = $pes->find($pes->id)->relCidades;    
             @endphp
             <tr>
                 <th scope="row">{{$pes->id}}</th>
                 <td>{{$pes->nome}}</td>
                 <td>{{$pes->nascimento}}</td>
-                <td>{{$produto->nome}}</td>
+                <td>{{$carro->nome}}</td>
                 <td>{{$cidade->nome}}</td>
                 <td>         
                     <a href="{{url("pessoas/$pes->id/edit")}}">

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\ModelPessoas;
-use App\Models\ModelProdutos;
+use App\Models\ModelCarros;
 use App\Models\ModelCidades;
 use Log;
 
@@ -13,12 +13,12 @@ class PessoasController extends Controller
 {
     private $objPessoas;
     private $objCidades;
-    private $objProdutos;
+    private $objCarros;
 
     public function __construct(){
         $this->objPessoas = new ModelPessoas;
         $this->objCidades = new ModelCidades;
-        $this->objProdutos = new ModelProdutos;
+        $this->objCarros = new ModelCarros;
     }
     
     public function index(){
@@ -28,15 +28,15 @@ class PessoasController extends Controller
     
     public function create(){
         $cidades = $this->objCidades->all();
-        $produtos = $this->objProdutos->all();
-        return view('pessoas.create',compact('cidades','produtos'));
+        $carros = $this->objCarros->all();
+        return view('pessoas.create',compact('cidades','carros'));
     }
     
     public function edit($id){
         $pessoas = $this->objPessoas->find($id);
         $cidades = $this->objCidades->all();
-        $produtos = $this->objProdutos->all();
-        return view('pessoas.create',compact('pessoas','cidades','produtos'));
+        $carros = $this->objCarros->all();
+        return view('pessoas.create',compact('pessoas','cidades','carros'));
     }
 
     public function store(Request $request){
@@ -44,7 +44,7 @@ class PessoasController extends Controller
             'id' => $request->id,
             'nome' => $request->nome,
             'nascimento' => $request->nascimento,
-            'produto' => $request->produto,
+            'carro' => $request->carro,
             'cidade' => $request->cidade
         ]);
         if($cad){
@@ -57,7 +57,7 @@ class PessoasController extends Controller
             'id' => $request->id,
             'nome' => $request->nome,
             'nascimento' => $request->nascimento,
-            'produto' => $request->produto,
+            'carro' => $request->carro,
             'cidade' => $request->cidade
         ]);
         return redirect('pessoas');

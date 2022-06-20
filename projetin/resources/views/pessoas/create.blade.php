@@ -23,16 +23,16 @@
                 <input class="form-control" type="text" name="id" id="id" placeholder="Código:" value="{{$pessoas->id ?? ''}}" required><br>
                 <input class="form-control" type="text" name="nome" id="nome" placeholder="Nome:" value="{{$pessoas->nome ?? ''}}" required><br>
                 <input class="form-control" type="date" name="nascimento" id="nascimento" placeholder="Nascimento:" value="{{$pessoas->nascimento ?? ''}}" required><br>
-                <select class="form-control" name="produto" id="produto" required>             
-                    @foreach($produtos as $produto)
+                <select class="form-control" name="carro" id="carro" required>             
+                    @foreach($carros as $carro)
                         @if(isset($pessoas))
-                            @if($pessoas->produto == $produto->id)                  
-                                <option value="{{$produto->id}}" selected>{{$produto->nome}}</option>
+                            @if($pessoas->carro == $carro->id)                  
+                                <option value="{{$carro->id}}" selected>{{$carro->nome}}</option>
                             @else
-                                <option value="{{$produto->id}}">{{$produto->nome}}</option>
+                                <option value="{{$carro->id}}">{{$carro->nome}}</option>
                             @endif
                         @else
-                            <option value="{{$produto->id}}">{{$produto->nome}}</option>
+                            <option value="{{$carro->id}}">{{$carro->nome}}</option>
                         @endif
                     @endforeach
                 </select><br>

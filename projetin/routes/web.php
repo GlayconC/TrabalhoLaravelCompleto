@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProdutosController;
+use App\Http\Controllers\CarrosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,23 +18,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/produtos', 
-    'App\Http\Controllers\ProdutosController@index');
+Route::get('/carros', 
+    'App\Http\Controllers\CarrosController@index');
 
-Route::get('/produtos/create', 
-    'App\Http\Controllers\ProdutosController@create');
+Route::get('/carros/create', 
+    'App\Http\Controllers\CarrosController@create');
 
-Route::post('/produtos', 
-    'App\Http\Controllers\ProdutosController@store');
+Route::post('/carros', 
+    'App\Http\Controllers\CarrosController@store');
 
-Route::put('/produtos/{id}', 
-    'App\Http\Controllers\ProdutosController@update');
+Route::put('/carros/{id}', 
+    'App\Http\Controllers\CarrosController@update');
 
-Route::get('/produtos/{id}', 
-    'App\Http\Controllers\ProdutosController@destroy');
+Route::get('/carros/{id}', 
+    'App\Http\Controllers\CarrosController@destroy');
 
-Route::get('/produtos/{id}/edit', 
-    'App\Http\Controllers\ProdutosController@edit');
+Route::get('/carros/{id}/edit', 
+    'App\Http\Controllers\CarrosController@edit');
 
 
 

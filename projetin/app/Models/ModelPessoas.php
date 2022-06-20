@@ -8,13 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class ModelPessoas extends Model
 {
     protected $table = 'pessoas';
-    protected $fillable = ['id','nome','nascimento','produto','cidade'];
+    protected $fillable = ['id','nome','nascimento','carro','cidade'];
 
     public function relCidades(){
         return $this->hasOne('App\Models\ModelCidades','id','cidade');
     }
 
-    public function relProdutos(){
-        return $this->hasOne('App\Models\ModelProdutos','id','produto');
+    public function relCarros(){
+        return $this->hasOne('App\Models\ModelCarros','id','carro');
     }
 }

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{url('assets/bootstrap/css/bootstrap.min.css')}}">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
@@ -19,7 +19,7 @@
           <a class="nav-link active" aria-current="page" href="/pessoas">Pessoas</a>
         </li>
         <li class="nav-item" >
-          <a class="nav-link active" aria-current="page" href="/produtos">Produtos</a>
+          <a class="nav-link active" aria-current="page" href="/carros">Carros</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/cidades">Cidades</a>

@@ -1,9 +1,9 @@
 @extends('templates.template')
 @section('content')
-<h1 class="text-center">Produtos</h1> <hr>
+<h1 class="text-center">Carros</h1> <hr>
 
 <div class="text-center mt-3 mb-4">
-    <a href="{{url('produtos/create')}}">
+    <a href="{{url('carros/create')}}">
         <button class="btn btn-success">Cadastrar</button>
     </a>
 </div>
@@ -21,17 +21,17 @@
         </thead>
         <tbody>
 
-        @foreach($produtos as $produto)
+        @foreach($carros as $carro)
             <tr>
-                <th scope="row">{{$produto->id}}</th>
-                <td>{{$produto->nome}}</td>
-                <td>{{$produto->preco}} R$</td>
+                <th scope="row">{{$carro->id}}</th>
+                <td>{{$carro->nome}}</td>
+                <td>{{$carro->preco}} R$</td>
                 <td>         
-                    <a href="{{url("produtos/$produto->id/edit")}}">
+                    <a href="{{url("carros/$carro->id/edit")}}">
                         <button class="btn btn-primary">Editar</button>
                     </a>
 
-                    <a href="{{url("produtos/$produto->id")}}">
+                    <a href="{{url("carros/$carro->id")}}">
                         <button class="btn btn-danger">Deletar</button>
                     </a>
                 </td>
